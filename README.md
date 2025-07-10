@@ -18,7 +18,7 @@ A Spring Boot RESTful API for managing customers with CRUD operations, tier clas
 
 ### 📋 Prerequisites
 
-- Java 17+
+- Java 17+ (Java 24.0.1)
 - Maven 3.8+
 - Git
 
@@ -177,7 +177,7 @@ Access via:
 
 ## 👩‍💻 Author
 
-**Ramya Tata**  
+**Ramya Vaka**  
 📧 ramya.tata@gmail.com  
 🔗 GitHub: [rtata28](https://github.com/rtata28)
 
