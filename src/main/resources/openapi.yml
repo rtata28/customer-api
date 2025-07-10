@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: Customer Management API
+  version: 1.0.0
+paths:
+  /customers:
+    post:
+      summary: Create a new customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+      responses:
+        '201':
+          description: Customer created successfully
+        '400':
+          description: Invalid request (e.g., email not provided or formatted incorrectly)
+  /customers/{id}:
+    get:
+      summary: Retrieve a customer by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '404':
+           description: Customer not found
+components:
+  schemas:
+    CustomerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        annualSpend:
+          type: number
+          format: double
+        lastPurchaseDate:
+          type: string
+          format: date-time
+      required:
+        - name
+        - email
+CustomerResponse:
+  allOf:
+    - $ref: '#/components/schemas/CustomerRequest'
+    - type: object
+  properties:
+    id:
+      type: string
+    tier:
+      type: string
+    enum:
+    - Silver
+    - Gold
+    - Platinum
