@@ -28,10 +28,18 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<CustomerResponse> createCustomer(@RequestBody CustomerRequest request) {
         logger.info("Creating new customer with name: {}", request.getName());
+
+        // Manual email format validation
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        if (!request.getEmail().matches(emailRegex)) {
+            logger.warn("Invalid email format received: {}", request.getEmail());
+            return ResponseEntity.badRequest().body(null); // or throw custom exception
+        }
+
         CustomerResponse createdCustomer = customerService.createCustomer(request);
-        // logger.info("Customer created successfully with ID: {}", createdCustomer.getId());
         return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
+
 
     // GET /customers/{id}
     @GetMapping("/{id}")

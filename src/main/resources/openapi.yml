@@ -33,7 +33,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CustomerResponse'
         '404':
-           description: Customer not found
+          description: Customer not found
 components:
   schemas:
     CustomerRequest:

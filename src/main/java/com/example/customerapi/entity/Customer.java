@@ -35,6 +35,4 @@ public class Customer {
 
     @Column(name = "last_purchase_date")
     private LocalDate lastPurchaseDate;
-
-    // Getters, Setters, Constructors
 }
