@@ -6,13 +6,16 @@ A Spring Boot RESTful API for managing customers with CRUD operations, tier clas
 
 ## 🚀 Features
 
-- ✅ Create, retrieve, update, and delete customers.
+- ✅ Spring Boot + Maven Project
+- ✅ CRUD Endpoints: Create, retrieve, update, and delete customers.
+- 💾 In-memory H2 database config for local development and testing.
+- ✅ UUID for Customer ID
 - 🎯 Classify customers into tiers based on `annualSpend`.
 - 📧 Email format validation.
-- 💾 In-memory H2 database for local development and testing.
-- 📓 Unit and controller tests included.
-
----
+- ✅ Tier Calculation (Silver/Gold/Plat)
+- ✅ OpenAPI Spec (YAML)
+- 📓 Unit Tests (Service + Controller)
+- ✅ README with build/run instructions
 
 ## 🛠️ Build and Run
 
@@ -44,6 +47,9 @@ mvn spring-boot:run
 The application runs at:  
 `http://localhost:8080`
 
+---
+Use Swagger EndPoint to view the Webservices
+'http://localhost:8080/swagger-ui.html'
 ---
 
 ## 📬 API Endpoints
