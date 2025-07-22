@@ -21,7 +21,7 @@ A Spring Boot RESTful API for managing customers with CRUD operations, tier clas
 
 ### 📋 Prerequisites
 
-- Java 17+ (Java 24.0.1)
+- Java 17
 - Maven 3.8+
 - Git
 
