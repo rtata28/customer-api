@@ -28,9 +28,8 @@ public class CustomerService {
     }
 
     public CustomerResponse createCustomer(CustomerRequest request) {
-        logger.debug("Validating email: {}", request.getEmail());
-
         validateRequest(request);
+        logger.debug("Validating email: {}", request.getEmail());
 
         Customer customer = new Customer(
                 null,
